@@ -1,0 +1,26 @@
+# Nimbus — see which macOS window has keyboard focus.
+# https://github.com/vivosAi/nimbus
+#
+#   brew install --cask vivosAi/tap/nimbus
+#
+cask "nimbus" do
+  version "0.1.0"
+  sha256 "f88352d8387bd981929cce801c59bebea05a0454cb0cabebadeb5e5f49d6e5e2"
+
+  url "https://github.com/vivosAi/nimbus/releases/download/v#{version}/Nimbus.dmg"
+  name "Nimbus"
+  desc "Draws an animated ring of light around the focused window"
+  homepage "https://github.com/vivosAi/nimbus"
+
+  depends_on macos: ">= :ventura"
+
+  app "Nimbus.app"
+
+  uninstall quit: "io.github.vivosai.nimbus"
+
+  # The Accessibility grant is keyed to the bundle identifier, so macOS keeps it
+  # after an uninstall. Clear it too, or a reinstall inherits a stale entry.
+  zap trash: [
+    "~/Library/Preferences/io.github.vivosai.nimbus.plist",
+  ]
+end
