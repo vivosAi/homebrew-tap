@@ -4,8 +4,8 @@
 #   brew install --cask vivosAi/tap/nimbus
 #
 cask "nimbus" do
-  version "0.1.1"
-  sha256 "6692629b6019a7ebd8ebd55ce4613fb3e42b9d381e44b14a63ba20937e22a221"
+  version "0.1.2"
+  sha256 "7002cc1827fb550889fb2f3414875b0b902aca1f7e3bbcb4d9abb84c31da749e"
 
   url "https://github.com/vivosAi/nimbus/releases/download/v#{version}/Nimbus.dmg"
   name "Nimbus"
